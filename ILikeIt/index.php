@@ -20,7 +20,7 @@ $userDAL = new model\UserDAL();
 
 //CREATE OBJECTS OF THE VIEWS
 $startView = new view\StartView();
-$personalView = new view\PersonalView();
+$personalView = new view\PersonalView($userDAL);
 $navigationView = new view\NavigationView($startView, $personalView);
 $layoutView = new view\LayoutView($startView, $personalView, $navigationView);
 

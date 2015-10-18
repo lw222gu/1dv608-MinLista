@@ -6,9 +6,10 @@ class User {
     private $name;
     private $id;
 
-    public function __construct($url = null, $name = null, $id = null){
+    public function __construct($url = null){
         if($url != null){
             $this->url = $url;
+            $this->id = password_verify($url, PASSWORD_DEFAULT);
         }
     }
 
@@ -23,10 +24,5 @@ class User {
 
     public function getId(){
         return $this->id;
-    }
-
-    public function getUserDetails(){
-        $name = "Namnet Namnsson";
-        return $name;
     }
 }

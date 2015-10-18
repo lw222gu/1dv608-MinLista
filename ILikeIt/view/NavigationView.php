@@ -10,7 +10,8 @@ class NavigationView{
     public function isUserLoggedIn(){
         if(strpos($_SERVER['REQUEST_URI'], "?")){
             $url = $_SERVER['REQUEST_URI'];
-            return $this->personalView->showPersonalInformation($url);
+            $customUrl = substr($url, strpos($url, "?"));
+            return $this->personalView->showPersonalInformation($customUrl);
         }
         else {
             return $this->startView->generateRegisterButton();

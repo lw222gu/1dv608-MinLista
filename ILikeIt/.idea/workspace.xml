@@ -28,8 +28,8 @@
       <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-20.26923" vertical-offset="0" max-vertical-offset="629">
-              <caret line="31" column="22" selection-start-line="31" selection-start-column="22" selection-end-line="31" selection-end-column="22" />
+            <state vertical-scroll-proportion="-14.384615" vertical-offset="0" max-vertical-offset="629">
+              <caret line="22" column="48" selection-start-line="22" selection-start-column="48" selection-end-line="22" selection-end-column="48" />
               <folding />
             </state>
           </provider>
@@ -38,8 +38,8 @@
       <file leaf-file-name="UserDAL.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/model/UserDAL.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-16.346153" vertical-offset="0" max-vertical-offset="527">
-              <caret line="25" column="1" selection-start-line="25" selection-start-column="1" selection-end-line="25" selection-end-column="1" />
+            <state vertical-scroll-proportion="-23.538462" vertical-offset="0" max-vertical-offset="748">
+              <caret line="36" column="27" selection-start-line="36" selection-start-column="27" selection-end-line="36" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -55,11 +55,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="User.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="User.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/model/User.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.21888413" vertical-offset="0" max-vertical-offset="699">
-              <caret line="9" column="25" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
+            <state vertical-scroll-proportion="-11.115385" vertical-offset="0" max-vertical-offset="561">
+              <caret line="17" column="24" selection-start-line="17" selection-start-column="24" selection-end-line="17" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -92,18 +92,18 @@
       <file leaf-file-name="NavigationView.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/view/NavigationView.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.153846" vertical-offset="0" max-vertical-offset="408">
-              <caret line="14" column="14" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
+            <state vertical-scroll-proportion="-11.115385" vertical-offset="0" max-vertical-offset="425">
+              <caret line="17" column="9" selection-start-line="17" selection-start-column="9" selection-end-line="17" selection-end-column="9" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PersonalView.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="PersonalView.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/view/PersonalView.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-15.692307" vertical-offset="0" max-vertical-offset="510">
-              <caret line="24" column="1" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
+            <state vertical-scroll-proportion="0.37194338" vertical-offset="0" max-vertical-offset="777">
+              <caret line="17" column="43" selection-start-line="17" selection-start-column="43" selection-end-line="17" selection-end-column="43" />
               <folding />
             </state>
           </provider>
@@ -125,8 +125,8 @@
       <file leaf-file-name="ShowPersonalizedPageController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/controller/ShowPersonalizedPageController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.9230769" vertical-offset="0" max-vertical-offset="425">
-              <caret line="6" column="77" selection-start-line="6" selection-start-column="73" selection-end-line="6" selection-end-column="77" />
+            <state vertical-scroll-proportion="-9.807693" vertical-offset="0" max-vertical-offset="391">
+              <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -137,17 +137,17 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/controller/ShowPersonalizedPageController.php" />
         <option value="$PROJECT_DIR$/model/NewUser.php" />
-        <option value="$PROJECT_DIR$/view/PersonalView.php" />
         <option value="$PROJECT_DIR$/view/LayoutView.php" />
-        <option value="$PROJECT_DIR$/view/NavigationView.php" />
-        <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/data/users.xml" />
         <option value="$PROJECT_DIR$/view/StartView.php" />
         <option value="$PROJECT_DIR$/controller/AddUserController.php" />
+        <option value="$PROJECT_DIR$/view/NavigationView.php" />
+        <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/model/UserDAL.php" />
         <option value="$PROJECT_DIR$/model/User.php" />
+        <option value="$PROJECT_DIR$/controller/ShowPersonalizedPageController.php" />
+        <option value="$PROJECT_DIR$/view/PersonalView.php" />
       </list>
     </option>
   </component>
@@ -156,10 +156,10 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" interpreter_name="PHP" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="-1720" />
-    <option name="y" value="130" />
-    <option name="width" value="1566" />
-    <option name="height" value="862" />
+    <option name="x" value="-1584" />
+    <option name="y" value="73" />
+    <option name="width" value="1376" />
+    <option name="height" value="940" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -340,7 +340,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1720" y="130" width="1566" height="862" extended-state="0" />
+    <frame x="-1584" y="73" width="1376" height="940" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -350,7 +350,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="PHP-CGI Server" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21225807" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24191177" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39977604" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32922733" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -477,34 +477,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controller/ShowPersonalizedPageController.php">
+    <entry file="file://$PROJECT_DIR$/view/StartView.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.9230769" vertical-offset="0" max-vertical-offset="425">
-          <caret line="6" column="77" selection-start-line="6" selection-start-column="73" selection-end-line="6" selection-end-column="77" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/PersonalView.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.692307" vertical-offset="0" max-vertical-offset="510">
-          <caret line="24" column="1" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
-          <folding />
+        <state vertical-scroll-proportion="-20.26923" vertical-offset="0" max-vertical-offset="629">
+          <caret line="31" column="1" selection-start-line="31" selection-start-column="1" selection-end-line="31" selection-end-column="1" />
+          <folding>
+            <marker date="1445180607276" expanded="true" signature="467:731" placeholder="..." />
+            <marker date="1445180607276" expanded="true" signature="495:711" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-20.26923" vertical-offset="0" max-vertical-offset="629">
-          <caret line="31" column="22" selection-start-line="31" selection-start-column="22" selection-end-line="31" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/NavigationView.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.153846" vertical-offset="0" max-vertical-offset="408">
-          <caret line="14" column="14" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
+        <state vertical-scroll-proportion="-14.384615" vertical-offset="0" max-vertical-offset="629">
+          <caret line="22" column="48" selection-start-line="22" selection-start-column="48" selection-end-line="22" selection-end-column="48" />
           <folding />
         </state>
       </provider>
@@ -517,21 +504,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/view/StartView.php">
+    <entry file="file://$PROJECT_DIR$/model/User.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-20.26923" vertical-offset="0" max-vertical-offset="629">
-          <caret line="31" column="1" selection-start-line="31" selection-start-column="1" selection-end-line="31" selection-end-column="1" />
-          <folding>
-            <marker date="1445180607276" expanded="true" signature="467:731" placeholder="..." />
-            <marker date="1445180607276" expanded="true" signature="495:711" placeholder="..." />
-          </folding>
+        <state vertical-scroll-proportion="-11.115385" vertical-offset="0" max-vertical-offset="561">
+          <caret line="17" column="24" selection-start-line="17" selection-start-column="24" selection-end-line="17" selection-end-column="24" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/model/UserDAL.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-16.346153" vertical-offset="0" max-vertical-offset="527">
-          <caret line="25" column="1" selection-start-line="25" selection-start-column="1" selection-end-line="25" selection-end-column="1" />
+        <state vertical-scroll-proportion="-23.538462" vertical-offset="0" max-vertical-offset="748">
+          <caret line="36" column="27" selection-start-line="36" selection-start-column="27" selection-end-line="36" selection-end-column="27" />
           <folding />
         </state>
       </provider>
@@ -544,10 +528,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/model/User.php">
+    <entry file="file://$PROJECT_DIR$/controller/ShowPersonalizedPageController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.21888413" vertical-offset="0" max-vertical-offset="699">
-          <caret line="9" column="25" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
+        <state vertical-scroll-proportion="-9.807693" vertical-offset="0" max-vertical-offset="391">
+          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/NavigationView.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.115385" vertical-offset="0" max-vertical-offset="425">
+          <caret line="17" column="9" selection-start-line="17" selection-start-column="9" selection-end-line="17" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/PersonalView.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.37194338" vertical-offset="0" max-vertical-offset="777">
+          <caret line="17" column="43" selection-start-line="17" selection-start-column="43" selection-end-line="17" selection-end-column="43" />
           <folding />
         </state>
       </provider>

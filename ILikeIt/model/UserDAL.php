@@ -23,4 +23,17 @@ class UserDAL {
     public function getNumberOfUsers(){
         return simplexml_load_file($this->file)->children()->count();
     }
+
+    public function getUserByUrl($url){
+        $customUser = new User($url);
+        $xml = simplexml_load_file($this->file);
+
+        foreach($xml->children() as $user) {
+            if($user['url'] == $url){
+                $customUser->setUserInformation($user['name'], $user['id']);
+                break;
+            }
+        }
+        return $customUser;
+    }
 }

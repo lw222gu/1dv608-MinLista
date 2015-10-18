@@ -13,8 +13,6 @@ class ShowPersonalizedPageController {
     private function getUserDetails(){
       //  if($this->personalView->isUrlSet()){
             //model...DAL
-            $userInformation = $this->user->getUserDetails();
-            $this->personalView->setUserDetails($userInformation);
       //  }
     }
 }
