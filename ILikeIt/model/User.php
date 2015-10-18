@@ -2,29 +2,31 @@
 namespace model;
 class User {
 
-    private $isUserSaved = false;
+    private $url;
+    private $name;
+    private $id;
 
-    public function saveUser($name){
-        //Using simple xml it wont generate a properly indented xml-file...
-        $file = "data/users.xml";
-        $xml = simplexml_load_file($file);
-        $id = $xml->children()->count() + 1;
-        $url = $this->generateRandomUrl($id);
-        $user = $xml->addChild('user');
-        $user->addAttribute("id", $id);
-        $user->addAttribute("name", $name);
-        $user->addAttribute("url", $url);
-        $xml->asXML($file);
-        $this->isUserSaved = true;
+    public function __construct($url = null, $name = null, $id = null){
+        if($url != null){
+            $this->url = $url;
+        }
     }
 
-    //generate and return random unique link
-    public function generateRandomUrl($id){
-        $url = "?" . password_hash($id, PASSWORD_DEFAULT);
-        return $url;
+    public function setUserInformation($name, $id){
+        $this->name = $name;
+        $this->id = $id;
     }
 
-    public function getIsUserSavedStatus(){
-        return $this->isUserSaved;
+    public function getName(){
+        return $this->name;
+    }
+
+    public function getId(){
+        return $this->id;
+    }
+
+    public function getUserDetails(){
+        $name = "Namnet Namnsson";
+        return $name;
     }
 }
