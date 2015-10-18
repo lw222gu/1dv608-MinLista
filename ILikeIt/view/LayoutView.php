@@ -17,12 +17,21 @@ class LayoutView {
                 <head>
                     <meta charset="utf-8">
                     <title>I like it!</title>
+                    <link rel="stylesheet" href="content/css/style.css" />
                 </head>
         <body>
-        <h1>I like it!</h1>
-          ' . $this->navigationView->isUserLoggedIn() . '
+            <main>
+                ' . $this->renderHeader() . '
+                ' . $this->navigationView->isUserLoggedIn() . '
+            </main>
          </body>
       </html>
     ';
+    }
+
+    public function renderHeader(){
+        return '<header>
+                    <img src="content/css/images/logotype.png" alt="Logotyp för ilikeit.se">
+                </header>';
     }
 }
