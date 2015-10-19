@@ -1,20 +1,75 @@
 body {
     font-family: sans-serif;
+    font-size: 1em;
     /*background-image: url("images/Background-Tulips.png");*/
     background-color: ghostwhite;
 }
 
 main {
-    max-width:600px;
+    max-width:550px;
     margin: 0 auto 0 auto;
-    padding: 25px;
+    padding: 50px;
     padding-top: 50px;
     margin-top: 75px;
     background:#FFF;
 }
 
 header img {
-    width:250px;
+    width:50%;
+    margin-left:25%;
+    margin-right: 25%;
     margin-bottom: 35px;
 }
 
+p {
+    font-size: 0.9em;
+    text-align: center;
+    line-height: 1.35em;
+}
+
+#nameLabel {
+    display:block;
+    font-size: 1em;
+    width:100%;
+    text-align: center;
+    margin-top: 40px;
+    color:forestgreen;
+}
+
+#nameInput {
+    width:70%;
+    height:35px;
+    display:block;
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-top: 5px;
+    border:solid;
+    border-radius: 15px;
+    border-width: 1px;
+    border-color: yellowgreen;
+    color:yellowgreen;
+    font-size: 1.3em;
+    text-align: center;
+}
+
+#registerButton {
+    height:40px;
+    width:60%;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 20px;
+    color:forestgreen;
+    font-size: 1em;
+    background-color: #FFF;
+    border:solid;
+    border-radius: 15px;
+    border-width: 1px;
+
+}
+
+#registerButton:hover {
+    background-color: yellowgreen;
+    border:none;
+    color:#FFF;
+    cursor:pointer;
+}
