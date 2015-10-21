@@ -30,12 +30,18 @@ class UserDAL {
         $customUser = new User($url);
         $xml = simplexml_load_file($this->file);
 
-        foreach($xml->children() as $user) {
-            $urlAttr = $user['url'];
-            if(strcmp($urlAttr, $url)){
-                $customUser->setUserInformation($user['name'], $user['id']);
+        for($i = 0; $i < $xml->children()->count(); $i += 1){
+            if((string)$xml->children()[$i]['url'] === $url){
+                $customUser->setUserInformation((string)$xml->children()[$i]['name'], (string)$xml->children()[$i]['id']);
             }
         }
         return $customUser;
+
+        /*foreach($xml->children() as $user) {
+            if(strcmp($user['url'], $url)){
+                $customUser->setUserInformation($user['name'], $user['id']);
+                return $customUser;
+            }
+        }*/
     }
 }
