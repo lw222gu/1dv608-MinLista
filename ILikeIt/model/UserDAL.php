@@ -34,7 +34,6 @@ class UserDAL {
             $urlAttr = $user['url'];
             if(strcmp($urlAttr, $url)){
                 $customUser->setUserInformation($user['name'], $user['id']);
-                break;
             }
         }
         return $customUser;

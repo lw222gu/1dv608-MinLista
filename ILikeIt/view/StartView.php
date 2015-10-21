@@ -34,6 +34,7 @@ class StartView {
     }
 
     public function redirect($url){
-        echo "Redirects to " . $url . "!";
+        $actualLink = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'];
+        header("Location: $actualLink" . "$url");
     }
 }
