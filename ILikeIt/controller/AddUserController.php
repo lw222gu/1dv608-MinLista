@@ -6,18 +6,23 @@ class AddUserController {
     private $user;
     private $userDAL;
 
-    public function __construct(\view\StartView $startView, \model\User $user, \model\UserDAL $userDAL){
-        $this->startView = $startView;
-        $this->user = $user;
-        $this->userDAL = $userDAL;
+    public function __construct(){
+        $this->startView = new \view\StartView();
+        $this->userDAL = new \model\UserDAL();
+
         $this->checkUserInput();
     }
 
     private function checkUserInput(){
         if($this->startView->didUserPressRegisterButton()){
+            $this->user = new \model\User();
             $this->user->setUserInformation($this->startView->getName(), $this->userDAL->getNumberOfUsers()+1);
-            $this->userDAL->saveNewUser($this->user);
-            $this->startView->redirect();
+            $url = $this->userDAL->saveNewUser($this->user);
+            $this->startView->redirect($url);
         }
+    }
+
+    public function getOutput(){
+        return $this->startView->generateRegisterForm();
     }
 }

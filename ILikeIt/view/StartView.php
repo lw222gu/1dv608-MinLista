@@ -12,10 +12,14 @@ class StartView {
     }
 
     public function getName(){
+
+        //Lägg till validering här. Tex, inga hmtl-taggar.
         return $_POST[self::$name];
     }
 
-    public function generateRegisterButton(){
+
+
+    public function generateRegisterForm(){
         return '
             <p>Välkommen till I like it! Här skapar du en personlig startsida med de länkar du vill ha nära till hands.
             Fyll i ditt namn nedan och klicka på den stora knappen så är du igång. Kom ihåg att spara adressen du länkas
@@ -29,7 +33,7 @@ class StartView {
         ';
     }
 
-    public function redirect(){
-        echo "Redirects!";
+    public function redirect($url){
+        echo "Redirects to " . $url . "!";
     }
 }

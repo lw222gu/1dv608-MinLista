@@ -25,4 +25,8 @@ class User {
     public function getId(){
         return $this->id;
     }
+
+    public function getUrl(){
+        return $this->url;
+    }
 }

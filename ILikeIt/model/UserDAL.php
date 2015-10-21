@@ -18,6 +18,8 @@ class UserDAL {
         $xmlUser->addAttribute("name", $user->getName());
         $xmlUser->addAttribute("url", $url);
         $xml->asXML($this->file);
+
+        return $url;
     }
 
     public function getNumberOfUsers(){
@@ -29,7 +31,8 @@ class UserDAL {
         $xml = simplexml_load_file($this->file);
 
         foreach($xml->children() as $user) {
-            if($user['url'] == $url){
+            $urlAttr = $user['url'];
+            if(strcmp($urlAttr, $url)){
                 $customUser->setUserInformation($user['name'], $user['id']);
                 break;
             }
