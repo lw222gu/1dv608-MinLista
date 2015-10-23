@@ -67,9 +67,38 @@ p {
 
 }
 
-#registerButton:hover, #addLinkButton:hover {
+#registerButton:hover, #registerButton:focus, #addLinkButton:hover, #addLinkButton:focus {
     background-color: yellowgreen;
     border:none;
     color:#FFF;
     cursor:pointer;
 }
+
+#linkList {
+    list-style: none;
+    width:100%;
+    text-align: center;
+    padding-left: 0px;
+}
+
+#linkList li {
+    display:inline-block;
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+
+#linkList li a {
+    padding:10px;
+    display:block;
+    background-color: yellowgreen;
+    color: #FFF;
+    text-decoration: none;
+    border:none;
+    border-radius: 10px;
+
+}
+
+#linkList li a:hover {
+    background-color: forestgreen;
+}
+

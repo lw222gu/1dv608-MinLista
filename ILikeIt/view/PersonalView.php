@@ -28,9 +28,8 @@ class PersonalView {
     public function showPersonalInformation($url){
         $this->url = $url;
         return  "<p>Välkommen tillbaka " . $this->user->getName() . "!</p>" . $this->renderRegisterLinkForm() .
-                "<br /><p>Dina sparade länkar:</p><ul>" .
-                $this->renderUserLinks() .
-                "</ul>";
+                "<br /><p>Dina sparade länkar:</p><ul id='linkList'>" .
+                $this->renderUserLinks() . "</ul>";
     }
 
     public function renderRegisterLinkForm(){
@@ -46,8 +45,13 @@ class PersonalView {
     public function renderUserLinks(){
         $response = "";
         foreach($this->user->getUserLinks() as $link){
-            $response .= "<li>" . $link . "</li>";
+            $response .= "<li><a href='//" . $link . "'>" . $link . "</a></li>";
         }
         return $response;
+    }
+
+    public function redirect($url){
+        $actualLink = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'];
+        header("Location: $actualLink" . "$url");
     }
 }

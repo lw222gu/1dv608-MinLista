@@ -18,6 +18,7 @@ class RegisteredUserController {
         if($this->personalView->didUserPressAddLinkButton()){
             $this->link = $this->personalView->getLink();
             $this->saveLink();
+            $this->personalView->redirect($uniqueUrl);
         }
     }
 
