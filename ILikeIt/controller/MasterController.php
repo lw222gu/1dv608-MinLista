@@ -23,6 +23,4 @@ class MasterController {
         $layoutView = new \view\LayoutView();
         $layoutView->render($this->output);
     }
-
-    //Blir controllrarna globala om jag inte spar dom i variabler, eller kan jag bara köra new ..?
 }

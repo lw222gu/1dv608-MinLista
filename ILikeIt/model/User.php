@@ -5,6 +5,7 @@ class User {
     private $url;
     private $name;
     private $id;
+    private $links;
 
     public function __construct($url = null){
         if($url != null){
@@ -28,5 +29,13 @@ class User {
 
     public function getUrl(){
         return $this->url;
+    }
+
+    public function setUserLinks($links){
+        $this->links = $links;
+    }
+
+    public function getUserLinks(){
+        return $this->links;
     }
 }

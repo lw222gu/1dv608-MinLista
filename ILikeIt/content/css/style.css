@@ -27,7 +27,7 @@ p {
     line-height: 1.35em;
 }
 
-#nameLabel {
+#nameLabel, #linkLabel {
     display:block;
     font-size: 1em;
     width:100%;
@@ -36,7 +36,7 @@ p {
     color:forestgreen;
 }
 
-#nameInput {
+#nameInput, #linkInput {
     width:70%;
     height:35px;
     display:block;
@@ -52,7 +52,7 @@ p {
     text-align: center;
 }
 
-#registerButton {
+#registerButton, #addLinkButton {
     height:40px;
     width:60%;
     margin-left: 20%;
@@ -67,7 +67,7 @@ p {
 
 }
 
-#registerButton:hover {
+#registerButton:hover, #addLinkButton:hover {
     background-color: yellowgreen;
     border:none;
     color:#FFF;

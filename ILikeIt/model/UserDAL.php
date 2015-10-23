@@ -32,16 +32,33 @@ class UserDAL {
 
         for($i = 0; $i < $xml->children()->count(); $i += 1){
             if((string)$xml->children()[$i]['url'] === $url){
-                $customUser->setUserInformation((string)$xml->children()[$i]['name'], (string)$xml->children()[$i]['id']);
+                $xmlUser = $xml->children()[$i];
+
+                $j = 0;
+                $links = array();
+                while($xmlUser->link[$j] != null){
+                    $link = new Link((string)$xmlUser->link[$j]['url']);
+                    array_push($links, $link->getLink());
+                    $j += 1;
+                }
+                $customUser->setUserInformation((string)$xmlUser['name'], (string)$xmlUser['id']);
+                $customUser->setUserLinks($links);
             }
         }
         return $customUser;
+    }
 
-        /*foreach($xml->children() as $user) {
-            if(strcmp($user['url'], $url)){
-                $customUser->setUserInformation($user['name'], $user['id']);
-                return $customUser;
+    public function saveLinkByUser(User $user, $url){
+        $id = $user->getId();
+        $xml = simplexml_load_file($this->file);
+
+        for($i = 0; $i < $xml->children()->count(); $i += 1){
+            if((string)$xml->children()[$i]['id'] === $id){
+                $xmlUser = $xml->children()[$i];
+                $xmlLink = $xmlUser->addChild('link');
+                $xmlLink->addAttribute("url", $url);
+                $xml->asXML($this->file);
             }
-        }*/
+        }
     }
 }
