@@ -11,13 +11,7 @@ class MasterController {
 
         if($isUserLoggedIn){
             $uniqueUrl = $navigationView->getUniqueUrl();
-            $wantsToEditLinks = false;
-
-            if($navigationView->userWantsToEditLinks()){
-                $wantsToEditLinks = true;
-            }
-
-            $registeredUserController = new RegisteredUserController($uniqueUrl, $wantsToEditLinks);
+            $registeredUserController = new RegisteredUserController($uniqueUrl, $navigationView->userWantsToEditLinks(), $navigationView->deleteLink());
             $this->output = $registeredUserController->getOutput();
         }
 

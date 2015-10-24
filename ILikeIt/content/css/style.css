@@ -73,20 +73,20 @@ p {
     cursor:pointer;
 }
 
-#linkList {
+#linkList, #editLinksList {
     list-style: none;
     width:100%;
     text-align: center;
     padding-left: 0px;
 }
 
-#linkList li {
+#linkList li, #editLinksList li {
     display:inline-block;
     margin-right: 5px;
     margin-bottom: 5px;
 }
 
-#linkList li a {
+#linkList li a, #editLinksList li a {
     padding:10px;
     display:block;
     background-color: yellowgreen;
@@ -100,10 +100,13 @@ p {
     background-color: forestgreen;
 }
 
-#editLink {
+#editLinksList li a:hover {
+    background-color: red;
+}
+
+#editLink, #backLink {
     padding:10px;
     display:block;
-    width:113px;
     background-color: lightgray;
     color: #FFF;
     text-decoration: none;
@@ -112,7 +115,15 @@ p {
     margin: 0 auto 0 auto;
 }
 
-#editLink:hover, #editLink:focus {
+#editLink {
+    width: 113px;
+}
+
+#backLink {
+    width:55px;
+}
+
+#editLink:hover, #editLink:focus, #backLink:hover, #backLink:focus {
     background-color: dimgray;
     cursor: pointer;
 }

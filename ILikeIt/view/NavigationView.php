@@ -11,9 +11,18 @@ class NavigationView{
 
     public function userWantsToEditLinks(){
         if(isset($_GET['edit'])){
-            return true;
+            if($_GET['edit'] == true){
+                return true;
+            }
         }
         return false;
+    }
+
+    public function deleteLink(){
+        if(isset($_GET['delete'])){
+            return $_GET['delete'];
+        }
+        return null;
     }
 
     public function getUniqueUrl(){

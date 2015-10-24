@@ -61,4 +61,17 @@ class UserDAL {
             }
         }
     }
+
+    public function deleteLink(User $user, $deleteLink){
+        $id = $user->getId();
+        $xml = simplexml_load_file($this->file);
+
+        for($i = 0; $i < $xml->children()->count(); $i += 1) {
+            if ((string)$xml->children()[$i]['id'] === $id) {
+                $user = $xml->children()[$i];
+                unset($user->children()[(int)$deleteLink]);
+            }
+        }
+        $xml->asXML($this->file);
+    }
 }

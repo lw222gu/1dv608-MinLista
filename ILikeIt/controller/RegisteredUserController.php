@@ -10,14 +10,18 @@ class RegisteredUserController {
     private $link;
     private $output;
 
-    public function __construct($uniqueUrl, $wantsToEditLinks){
+    public function __construct($uniqueUrl, $wantsToEditLinks, $deleteLink){
         $this->uniqueUrl = $uniqueUrl;
         $this->userDAL = new \model\UserDAL();
         $this->user = $this->userDAL->getUserByUrl($uniqueUrl);
 
         if($wantsToEditLinks){
+            if($deleteLink != null){
+                $this->userDAL->deleteLink($this->user, $deleteLink);
+                $this->user = $this->userDAL->getUserByUrl($uniqueUrl);
+            }
             $editLinksView = new \view\EditLinksView($this->user);
-            $this->output = $editLinksView->renderUserLinks();
+            $this->output = $editLinksView->showPersonalInformation();
         }
 
         else{
