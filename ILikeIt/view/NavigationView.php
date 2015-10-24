@@ -3,14 +3,20 @@ namespace view;
 class NavigationView{
 
     public function isRegisteredUser(){
-        if(strpos($_SERVER['REQUEST_URI'], "?")) {
+       if(isset($_GET['url'])){
+            return true;
+        }
+        return false;
+    }
+
+    public function userWantsToEditLinks(){
+        if(isset($_GET['edit'])){
             return true;
         }
         return false;
     }
 
     public function getUniqueUrl(){
-        $url = $_SERVER['REQUEST_URI'];
-        return substr($url, strpos($url, "?"));
+        return $_GET['url'];
     }
 }

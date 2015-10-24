@@ -4,6 +4,7 @@ class PersonalView {
 
     private static $link = 'PersonalView::Link';
     private static $addLink = 'PersonalView::AddLink';
+    private static $editLink = 'PersonalView::EditLink';
 
     private $url;
     private $user;
@@ -20,7 +21,6 @@ class PersonalView {
     }
 
     public function getLink(){
-
         //Lägg till validering här. Tex, inga hmtl-taggar.
         return $_POST[self::$link];
     }
@@ -29,12 +29,12 @@ class PersonalView {
         $this->url = $url;
         return  "<p>Välkommen tillbaka " . $this->user->getName() . "!</p>" . $this->renderRegisterLinkForm() .
                 "<br /><p>Dina sparade länkar:</p><ul id='linkList'>" .
-                $this->renderUserLinks() . "</ul>";
+                $this->renderUserLinks() . "</ul>" .
+                $this->renderEditButton();
     }
 
     public function renderRegisterLinkForm(){
-        return '<br/>
-                <form method="post" >
+        return '<form method="post" >
                     <label for="' . self::$link . '" id="linkLabel">Lägg till länk</label>
                     <input type="input" name ="' . self::$link . '" id="linkInput" value="" />
                     <input type="submit" name="' . self::$addLink . '" id="addLinkButton" value="Spara länken" />
@@ -50,8 +50,14 @@ class PersonalView {
         return $response;
     }
 
+    public function renderEditButton(){
+        $query = array('url' => $this->url, 'edit' => true);
+        return '<a href="?' . http_build_query($query) . '" name="' . self::$editLink . '" id="editLink">Redigera länkar</a>';
+    }
+
     public function redirect($url){
         $actualLink = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'];
-        header("Location: $actualLink" . "$url");
+        $query = array('url' => $url);
+        header("Location: $actualLink" . "?" . http_build_query($query));
     }
 }

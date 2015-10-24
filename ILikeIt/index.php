@@ -5,6 +5,7 @@ require_once('view/StartView.php');
 require_once('view/PersonalView.php');
 require_once('view/NavigationView.php');
 require_once('view/LayoutView.php');
+require_once('view/EditLinksView.php');
 require_once('model/User.php');
 require_once('model/UserDAL.php');
 require_once('model/Link.php');

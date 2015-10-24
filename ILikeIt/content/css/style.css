@@ -64,7 +64,6 @@ p {
     border:solid;
     border-radius: 15px;
     border-width: 1px;
-
 }
 
 #registerButton:hover, #registerButton:focus, #addLinkButton:hover, #addLinkButton:focus {
@@ -95,10 +94,25 @@ p {
     text-decoration: none;
     border:none;
     border-radius: 10px;
-
 }
 
 #linkList li a:hover {
     background-color: forestgreen;
 }
 
+#editLink {
+    padding:10px;
+    display:block;
+    width:113px;
+    background-color: lightgray;
+    color: #FFF;
+    text-decoration: none;
+    border:none;
+    border-radius: 10px;
+    margin: 0 auto 0 auto;
+}
+
+#editLink:hover, #editLink:focus {
+    background-color: dimgray;
+    cursor: pointer;
+}

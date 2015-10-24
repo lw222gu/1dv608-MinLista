@@ -8,17 +8,27 @@ class RegisteredUserController {
     private $user;
     private $personalView;
     private $link;
+    private $output;
 
-    public function __construct($uniqueUrl){
+    public function __construct($uniqueUrl, $wantsToEditLinks){
         $this->uniqueUrl = $uniqueUrl;
         $this->userDAL = new \model\UserDAL();
         $this->user = $this->userDAL->getUserByUrl($uniqueUrl);
-        $this->personalView = new \view\PersonalView($this->user);
 
-        if($this->personalView->didUserPressAddLinkButton()){
-            $this->link = $this->personalView->getLink();
-            $this->saveLink();
-            $this->personalView->redirect($uniqueUrl);
+        if($wantsToEditLinks){
+            $editLinksView = new \view\EditLinksView($this->user);
+            $this->output = $editLinksView->renderUserLinks();
+        }
+
+        else{
+            $this->personalView = new \view\PersonalView($this->user);
+            $this->output = $this->personalView->showPersonalInformation($this->uniqueUrl);
+
+            if($this->personalView->didUserPressAddLinkButton()){
+                $this->link = $this->personalView->getLink();
+                $this->saveLink();
+                $this->personalView->redirect($uniqueUrl);
+            }
         }
     }
 
@@ -27,9 +37,7 @@ class RegisteredUserController {
     }
 
     public function getOutPut(){
-        return $this->personalView->showPersonalInformation($this->uniqueUrl);
-    }
-
-    private function getUserDetails(){
+        return $this->output;
+        //return $this->personalView->showPersonalInformation($this->uniqueUrl);
     }
 }
