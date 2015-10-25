@@ -10,10 +10,10 @@ class EditLinksView {
     }
 
     public function showPersonalInformation(){
-        return  "<p>Hej " . $this->user->getName() . "!
-        Här kan du välja att ta bort en länk genom att klicka på den nedan.</p><br />
+        return  "<p>Här kan du välja att ta bort en länk genom att klicka på den nedan.</p><br />
         <ul id='editLinksList'>" .
-        $this->renderUserLinks() . "</ul>" .
+            $this->renderUserLinks() .
+        "</ul>" .
         $this->renderBackButton();
     }
 

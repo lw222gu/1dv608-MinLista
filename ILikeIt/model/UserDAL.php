@@ -7,7 +7,7 @@ class UserDAL {
 
     public function saveNewUser(User $user){
         $xml = simplexml_load_file($this->file);
-        $url = "?" . uniqid();
+        $url = uniqid();
         $xmlUser = $xml->addChild('user');
         $xmlUser->addAttribute("name", $user->getName());
         $xmlUser->addAttribute("url", $url);

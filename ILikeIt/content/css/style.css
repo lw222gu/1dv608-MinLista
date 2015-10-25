@@ -81,8 +81,7 @@ p {
 
 #linkList li, #editLinksList li {
     display:inline-block;
-    margin-right: 5px;
-    margin-bottom: 5px;
+    margin:3px;
 }
 
 #linkList li a, #editLinksList li a {
@@ -99,7 +98,7 @@ p {
     background-color: forestgreen;
 }
 
-#editLinksList li a:hover {
+#editLinksList li a:hover, #editLinksList li a:focus {
     background-color: red;
 }
 
