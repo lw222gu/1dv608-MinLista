@@ -25,7 +25,7 @@ class StartView {
             <form method="post" >
                 <label for="' . self::$name . '" id="nameLabel">Ditt namn (valfritt)</label>
                 <input type="input" name ="' . self::$name . '" id="nameInput" value="" />
-                <input type="submit" name="' . self::$register . '" id="registerButton" value="Skapa din startsida!" />
+                <input type="submit" name="' . self::$register . '" id="registerButton" value="Skapa din länklista!" />
             </form>
         ';
     }

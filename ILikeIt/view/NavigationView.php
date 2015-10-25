@@ -2,11 +2,13 @@
 namespace view;
 class NavigationView{
 
-    public function isRegisteredUser(){
+    public function getRegisteredUser(){
        if(isset($_GET['url'])){
-            return true;
+           $userDAL = new \model\UserDAL();
+           $user = $userDAL->getUserByUrl($_GET['url']);
+           return $user;
         }
-        return false;
+        return null;
     }
 
     public function userWantsToEditLinks(){
@@ -21,9 +23,5 @@ class NavigationView{
             return $_GET['delete'];
         }
         return null;
-    }
-
-    public function getUniqueUrl(){
-        return $_GET['url'];
     }
 }

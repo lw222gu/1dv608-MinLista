@@ -9,11 +9,11 @@ class MasterController {
     public function __construct(\view\NavigationView $navigationView){
 
         /* Gets information from navigationView to determine whether to run
-         * RegisteredUserController or AddUserController, depending on $_GET from url.
+         * RegisteredUserController or AddUserController, depending on if user exists or not.
          */
-        if($navigationView->isRegisteredUser()){
-            $uniqueUrl = $navigationView->getUniqueUrl();
-            $registeredUserController = new RegisteredUserController($uniqueUrl, $navigationView->userWantsToEditLinks(), $navigationView->deleteLink());
+        $user = $navigationView->getRegisteredUser();
+        if($user != null){
+            $registeredUserController = new RegisteredUserController($user, $navigationView->userWantsToEditLinks(), $navigationView->deleteLink());
             $this->output = $registeredUserController->getOutput();
         }
 

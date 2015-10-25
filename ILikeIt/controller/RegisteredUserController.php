@@ -3,17 +3,15 @@ namespace controller;
 
 class RegisteredUserController {
 
-    private $uniqueUrl;
     private $userDAL;
     private $user;
     private $personalView;
     private $link;
     private $output;
 
-    public function __construct($uniqueUrl, $wantsToEditLinks, $deleteLink){
-        $this->uniqueUrl = $uniqueUrl;
+    public function __construct(\model\User $user, $wantsToEditLinks, $deleteLink){
         $this->userDAL = new \model\UserDAL();
-        $this->user = $this->userDAL->getUserByUrl($uniqueUrl);
+        $this->user = $user;
 
         /*
          * wantsToEditLinks status from masterController decides

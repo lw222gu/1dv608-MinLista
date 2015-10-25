@@ -37,13 +37,13 @@ class PersonalView {
             $userName = " " . $userName;
         }
 
-        return  "<p>Välkommen tillbaka" . $userName . "!</p>" . $this->renderRegisterLinkForm() .
+        return  "<p>Välkommen tillbaka" . $userName . "!</p>" . $this->renderAddLinkForm() .
                 "<br /><p>Dina sparade länkar:</p><ul id='linkList'>" .
                 $this->renderUserLinks() . "</ul>" .
                 $this->renderEditButton();
     }
 
-    public function renderRegisterLinkForm(){
+    public function renderAddLinkForm(){
         return '<form method="post" >
                     <label for="' . self::$link . '" id="linkLabel">' . $this->linkLabelMessage . '</label>
                     <input type="input" name ="' . self::$link . '" id="linkInput" value="" />
@@ -58,7 +58,7 @@ class PersonalView {
 
         if($userLinks != null){
             foreach($this->user->getUserLinks() as $link){
-            $response .= "<li><a href='//" . $link . "'>" . $link . "</a></li>";
+            $response .= "<li><a href='//" . $link . "' target='_blank'>" . $link . "</a></li>";
             }
         }
         else {

@@ -21,11 +21,11 @@ class UserDAL {
     }
 
     public function getUserByUrl($url){
-        $customUser = new User($url);
         $xml = simplexml_load_file($this->file);
 
         for($i = 0; $i < $xml->children()->count(); $i += 1){
             if((string)$xml->children()[$i]['url'] === $url){
+                $customUser = new User($url);
                 $xmlUser = $xml->children()[$i];
 
                 $j = 0;
@@ -35,11 +35,13 @@ class UserDAL {
                     array_push($links, $link->getLink());
                     $j += 1;
                 }
+
                 $customUser->setName((string)$xmlUser['name']);
                 $customUser->setUserLinks($links);
+                return $customUser;
             }
         }
-        return $customUser;
+        return null;
     }
 
     public function saveLinkByUser(User $user, $url){
