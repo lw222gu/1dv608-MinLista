@@ -8,6 +8,7 @@ class PersonalView {
 
     private $url;
     private $user;
+    private $linkLabelMessage = "Lägg till länk";
 
     public function __construct(\model\User $user){
         $this->user = $user;
@@ -22,12 +23,21 @@ class PersonalView {
     }
 
     public function getLink(){
-        //Lägg till validering här. Tex, inga hmtl-taggar.
-        return $_POST[self::$link];
+        $addLink = strip_tags($_POST[self::$link]);
+        return $addLink;
+    }
+
+    public function setErrorMessage(){
+        $this->linkLabelMessage = "Du angav ingen länk. Prova igen!";
     }
 
     public function showPersonalInformation(){
-        return  "<p>Välkommen tillbaka " . $this->user->getName() . "!</p>" . $this->renderRegisterLinkForm() .
+        $userName = $this->user->getName();
+        if($userName != ""){
+            $userName = " " . $userName;
+        }
+
+        return  "<p>Välkommen tillbaka" . $userName . "!</p>" . $this->renderRegisterLinkForm() .
                 "<br /><p>Dina sparade länkar:</p><ul id='linkList'>" .
                 $this->renderUserLinks() . "</ul>" .
                 $this->renderEditButton();
@@ -35,7 +45,7 @@ class PersonalView {
 
     public function renderRegisterLinkForm(){
         return '<form method="post" >
-                    <label for="' . self::$link . '" id="linkLabel">Lägg till länk</label>
+                    <label for="' . self::$link . '" id="linkLabel">' . $this->linkLabelMessage . '</label>
                     <input type="input" name ="' . self::$link . '" id="linkInput" value="" />
                     <input type="submit" name="' . self::$addLink . '" id="addLinkButton" value="Spara länken" />
                 </form>
@@ -44,8 +54,15 @@ class PersonalView {
 
     public function renderUserLinks(){
         $response = "";
-        foreach($this->user->getUserLinks() as $link){
+        $userLinks = $this->user->getUserLinks();
+
+        if($userLinks != null){
+            foreach($this->user->getUserLinks() as $link){
             $response .= "<li><a href='//" . $link . "'>" . $link . "</a></li>";
+            }
+        }
+        else {
+            $response = "<p>Du har inte sparat några länkar ännu. Lägg till länkar ovan.</p>";
         }
         return $response;
     }

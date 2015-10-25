@@ -31,13 +31,24 @@ class RegisteredUserController {
 
         else{
             $this->personalView = new \view\PersonalView($this->user);
-            $this->output = $this->personalView->showPersonalInformation();
 
-            if($this->personalView->didUserPressAddLinkButton()){
-                $this->link = $this->personalView->getLink();
-                $this->saveLink();
-                $this->personalView->redirect();
+            try{
+                if($this->personalView->didUserPressAddLinkButton()){
+                    $this->link = $this->personalView->getLink();
+
+                    if($this->link != null){
+                        $this->saveLink();
+                        $this->personalView->redirect();
+                    }
+                    else {
+                        throw new \Exception();
+                    }
+                }
             }
+            catch(\Exception $e){
+                $this->personalView->setErrorMessage();
+            }
+            $this->output = $this->personalView->showPersonalInformation();
         }
     }
 
