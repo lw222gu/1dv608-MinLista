@@ -1,4 +1,5 @@
 <?php
+
 namespace view;
 class NavigationView{
 
@@ -6,8 +7,8 @@ class NavigationView{
        if(isset($_GET['url'])){
            $userDAL = new \model\UserDAL();
            $user = $userDAL->getUserByUrl($_GET['url']);
-           return $user;
-        }
+           return $user; /* If url doesn´t match a valid user, $user will be null. */
+       }
         return null;
     }
 

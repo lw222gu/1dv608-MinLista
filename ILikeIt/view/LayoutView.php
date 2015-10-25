@@ -1,10 +1,6 @@
 <?php
 namespace view;
 class LayoutView {
-    private $startView;
-    private $personalView;
-    private $navigationView;
-
 
     public function render($output){
         echo'<!DOCTYPE html>
@@ -15,18 +11,28 @@ class LayoutView {
                     <link rel="stylesheet" href="content/css/style.css" />
                 </head>
                 <body>
-                    <main>
+                    <div id="content">
                         ' . $this->renderHeader() . '
-                        ' . $output . '
-                    </main>
+                        <main>
+                            ' . $output . '
+                        </main>
+                        ' . $this->renderFooter() . '
+                    </div>
                  </body>
               </html>
             ';
     }
 
-    public function renderHeader(){
+    private function renderHeader(){
         return '<header>
                     <img src="content/css/images/logotype.svg" alt="Logotyp för minlista.se">
                 </header>';
+    }
+
+    private function renderFooter(){
+        return '<footer>
+                    <p><a href="http://www.minlista.se">Minlista.se</a>,
+                     av <a href="http://www.lisawestlund.se">Lisa Westlund</a></p>
+                </footer>';
     }
 }
