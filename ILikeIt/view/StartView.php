@@ -12,16 +12,15 @@ class StartView {
     }
 
     public function getName(){
-
         //Lägg till validering här. Tex, inga hmtl-taggar.
         return $_POST[self::$name];
     }
 
     public function generateRegisterForm(){
         return '
-            <p>Välkommen till I like it! Här skapar du en personlig startsida med de länkar du vill ha nära till hands.
+            <p>Välkommen till Min lista! Här skapar du en lista med de länkar du vill ha nära till hands.
             Fyll i ditt namn nedan och klicka på den stora knappen så är du igång. Kom ihåg att spara adressen du länkas
-            vidare till - det är nämligen så du kommer åt dina länkar senare. Spar den som startsida i webbläsaren, eller
+            vidare till - det är nämligen så du kommer åt dina länkar senare. Ett tips är att spara den som startsida i webbläsaren, eller
             som ett bokmärke.</p>
             <form method="post" >
                 <label for="' . self::$name . '" id="nameLabel">Ditt namn</label>
@@ -33,7 +32,7 @@ class StartView {
 
     public function redirect($url){
         $actualLink = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'];
-        $query = array('url' => $url, 'edit' => false);
+        $query = array('url' => $url);
         header("Location: $actualLink" . "?" . http_build_query($query));
     }
 }

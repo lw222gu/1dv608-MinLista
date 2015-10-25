@@ -15,7 +15,7 @@ class AddUserController {
     private function saveUser(){
         if($this->startView->didUserPressRegisterButton()){
             $this->user = new \model\User();
-            $this->user->setUserInformation($this->startView->getName(), $this->userDAL->getNumberOfUsers()+1);
+            $this->user->setName($this->startView->getName());
             $url = $this->userDAL->saveNewUser($this->user);
             $this->startView->redirect($url);
         }

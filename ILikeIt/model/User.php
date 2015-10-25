@@ -4,27 +4,20 @@ class User {
 
     private $url;
     private $name;
-    private $id;
     private $links;
 
     public function __construct($url = null){
         if($url != null){
             $this->url = $url;
-            $this->id = password_verify($url, PASSWORD_DEFAULT);
         }
     }
 
-    public function setUserInformation($name, $id){
+    public function setName($name){
         $this->name = $name;
-        $this->id = $id;
     }
 
     public function getName(){
         return $this->name;
-    }
-
-    public function getId(){
-        return $this->id;
     }
 
     public function getUrl(){

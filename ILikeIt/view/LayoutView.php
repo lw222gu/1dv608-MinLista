@@ -11,7 +11,7 @@ class LayoutView {
             <html>
                 <head>
                     <meta charset="utf-8">
-                    <title>I like it!</title>
+                    <title>Min lista</title>
                     <link rel="stylesheet" href="content/css/style.css" />
                 </head>
                 <body>
@@ -26,7 +26,7 @@ class LayoutView {
 
     public function renderHeader(){
         return '<header>
-                    <img src="content/css/images/logotype.png" alt="Logotyp för ilikeit.se">
+                    <img src="content/css/images/logotype.svg" alt="Logotyp för minlista.se">
                 </header>';
     }
 }

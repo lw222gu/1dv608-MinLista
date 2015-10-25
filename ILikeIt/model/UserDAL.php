@@ -7,10 +7,8 @@ class UserDAL {
 
     public function saveNewUser(User $user){
         $xml = simplexml_load_file($this->file);
-        $id = $user->getId();
-        $url = "?" . password_hash($id, PASSWORD_DEFAULT);
+        $url = "?" . uniqid();
         $xmlUser = $xml->addChild('user');
-        $xmlUser->addAttribute("id", $id);
         $xmlUser->addAttribute("name", $user->getName());
         $xmlUser->addAttribute("url", $url);
         $xml->asXML($this->file);
@@ -37,7 +35,7 @@ class UserDAL {
                     array_push($links, $link->getLink());
                     $j += 1;
                 }
-                $customUser->setUserInformation((string)$xmlUser['name'], (string)$xmlUser['id']);
+                $customUser->setName((string)$xmlUser['name']);
                 $customUser->setUserLinks($links);
             }
         }
@@ -45,11 +43,10 @@ class UserDAL {
     }
 
     public function saveLinkByUser(User $user, $url){
-        $id = $user->getId();
         $xml = simplexml_load_file($this->file);
 
         for($i = 0; $i < $xml->children()->count(); $i += 1){
-            if((string)$xml->children()[$i]['id'] === $id){
+            if((string)$xml->children()[$i]['url'] === $user->getUrl()){
                 $xmlUser = $xml->children()[$i];
                 $xmlLink = $xmlUser->addChild('link');
                 $xmlLink->addAttribute("url", $url);
@@ -59,11 +56,10 @@ class UserDAL {
     }
 
     public function deleteLink(User $user, $deleteLink){
-        $id = $user->getId();
         $xml = simplexml_load_file($this->file);
 
         for($i = 0; $i < $xml->children()->count(); $i += 1) {
-            if ((string)$xml->children()[$i]['id'] === $id) {
+            if ((string)$xml->children()[$i]['url'] === $user->getUrl()) {
                 $user = $xml->children()[$i];
                 unset($user->children()[(int)$deleteLink]);
                 $xml->asXML($this->file);
