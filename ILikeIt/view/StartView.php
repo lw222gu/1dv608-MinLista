@@ -17,8 +17,6 @@ class StartView {
         return $_POST[self::$name];
     }
 
-
-
     public function generateRegisterForm(){
         return '
             <p>Välkommen till I like it! Här skapar du en personlig startsida med de länkar du vill ha nära till hands.
@@ -35,7 +33,7 @@ class StartView {
 
     public function redirect($url){
         $actualLink = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'];
-        $query = array('url' => $url);
+        $query = array('url' => $url, 'edit' => false);
         header("Location: $actualLink" . "?" . http_build_query($query));
     }
 }

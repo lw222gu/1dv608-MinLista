@@ -5,10 +5,6 @@ class UserDAL {
 
     private $file = "data/users.xml";
 
-    public function __construct(){
-
-    }
-
     public function saveNewUser(User $user){
         $xml = simplexml_load_file($this->file);
         $id = $user->getId();
@@ -70,8 +66,8 @@ class UserDAL {
             if ((string)$xml->children()[$i]['id'] === $id) {
                 $user = $xml->children()[$i];
                 unset($user->children()[(int)$deleteLink]);
+                $xml->asXML($this->file);
             }
         }
-        $xml->asXML($this->file);
     }
 }

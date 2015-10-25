@@ -9,11 +9,10 @@ class AddUserController {
     public function __construct(){
         $this->startView = new \view\StartView();
         $this->userDAL = new \model\UserDAL();
-
-        $this->checkUserInput();
+        $this->saveUser();
     }
 
-    private function checkUserInput(){
+    private function saveUser(){
         if($this->startView->didUserPressRegisterButton()){
             $this->user = new \model\User();
             $this->user->setUserInformation($this->startView->getName(), $this->userDAL->getNumberOfUsers()+1);
@@ -22,6 +21,7 @@ class AddUserController {
         }
     }
 
+    /* Gets html output and returns it to MasterController. */
     public function getOutput(){
         return $this->startView->generateRegisterForm();
     }

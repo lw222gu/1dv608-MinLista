@@ -11,6 +11,7 @@ class PersonalView {
 
     public function __construct(\model\User $user){
         $this->user = $user;
+        $this->url = $this->user->getUrl();
     }
 
     public function didUserPressAddLinkButton(){
@@ -25,8 +26,7 @@ class PersonalView {
         return $_POST[self::$link];
     }
 
-    public function showPersonalInformation($url){
-        $this->url = $url;
+    public function showPersonalInformation(){
         return  "<p>Välkommen tillbaka " . $this->user->getName() . "!</p>" . $this->renderRegisterLinkForm() .
                 "<br /><p>Dina sparade länkar:</p><ul id='linkList'>" .
                 $this->renderUserLinks() . "</ul>" .
@@ -55,9 +55,9 @@ class PersonalView {
         return '<a href="?' . http_build_query($query) . '" name="' . self::$editLink . '" id="editLink">Redigera länkar</a>';
     }
 
-    public function redirect($url){
+    public function redirect(){
         $actualLink = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'];
-        $query = array('url' => $url);
+        $query = array('url' => $this->url, 'edit' => false);
         header("Location: $actualLink" . "?" . http_build_query($query));
     }
 }

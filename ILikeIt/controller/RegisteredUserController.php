@@ -15,10 +15,15 @@ class RegisteredUserController {
         $this->userDAL = new \model\UserDAL();
         $this->user = $this->userDAL->getUserByUrl($uniqueUrl);
 
+        /*
+         * wantsToEditLinks status from masterController decides
+         * whether to display editLinksView or personalView
+         */
         if($wantsToEditLinks){
             if($deleteLink != null){
+                /* deleteLink contains an index of which link to delete */
                 $this->userDAL->deleteLink($this->user, $deleteLink);
-                $this->user = $this->userDAL->getUserByUrl($uniqueUrl);
+                $this->user = $this->userDAL->getUserByUrl($this->user->getUrl());
             }
             $editLinksView = new \view\EditLinksView($this->user);
             $this->output = $editLinksView->showPersonalInformation();
@@ -26,12 +31,12 @@ class RegisteredUserController {
 
         else{
             $this->personalView = new \view\PersonalView($this->user);
-            $this->output = $this->personalView->showPersonalInformation($this->uniqueUrl);
+            $this->output = $this->personalView->showPersonalInformation();
 
             if($this->personalView->didUserPressAddLinkButton()){
                 $this->link = $this->personalView->getLink();
                 $this->saveLink();
-                $this->personalView->redirect($uniqueUrl);
+                $this->personalView->redirect();
             }
         }
     }
@@ -40,8 +45,7 @@ class RegisteredUserController {
         $this->userDAL->saveLinkByUser($this->user, $this->link);
     }
 
-    public function getOutPut(){
+    public function getOutput(){
         return $this->output;
-        //return $this->personalView->showPersonalInformation($this->uniqueUrl);
     }
 }

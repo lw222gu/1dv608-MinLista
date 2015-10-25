@@ -7,8 +7,6 @@ class LayoutView {
 
 
     public function render($output){
-        //Let layout view check url and decide whether to start the view for starting a personalized page,
-        // or to start the main start page (start view)
         echo'<!DOCTYPE html>
             <html>
                 <head>
@@ -16,14 +14,14 @@ class LayoutView {
                     <title>I like it!</title>
                     <link rel="stylesheet" href="content/css/style.css" />
                 </head>
-        <body>
-            <main>
-                ' . $this->renderHeader() . '
-                ' . $output . '
-            </main>
-         </body>
-      </html>
-    ';
+                <body>
+                    <main>
+                        ' . $this->renderHeader() . '
+                        ' . $output . '
+                    </main>
+                 </body>
+              </html>
+            ';
     }
 
     public function renderHeader(){

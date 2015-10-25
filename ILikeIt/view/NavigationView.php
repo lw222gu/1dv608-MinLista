@@ -10,10 +10,8 @@ class NavigationView{
     }
 
     public function userWantsToEditLinks(){
-        if(isset($_GET['edit'])){
-            if($_GET['edit'] == true){
-                return true;
-            }
+        if(isset($_GET['edit']) && $_GET['edit'] == true){
+            return true;
         }
         return false;
     }
