@@ -31,8 +31,8 @@ class UserDAL {
                 $j = 0;
                 $links = array();
                 while($xmlUser->link[$j] != null){
-                    $link = new Link((string)$xmlUser->link[$j]['url']);
-                    array_push($links, $link->getLink());
+                    $link = new Link((string)$xmlUser->link[$j]['url'], (string)$xmlUser->link[$j]['id']);
+                    array_push($links, $link);
                     $j += 1;
                 }
 
@@ -52,6 +52,7 @@ class UserDAL {
                 $xmlUser = $xml->children()[$i];
                 $xmlLink = $xmlUser->addChild('link');
                 $xmlLink->addAttribute("url", $url);
+                $xmlLink->addAttribute("id", uniqid());
                 $xml->asXML($this->file);
             }
         }
@@ -63,7 +64,11 @@ class UserDAL {
         for($i = 0; $i < $xml->children()->count(); $i += 1) {
             if ((string)$xml->children()[$i]['url'] === $user->getUrl()) {
                 $user = $xml->children()[$i];
-                unset($user->children()[(int)$deleteLink]);
+                for($j = 0; $j < $user->children()->count(); $j += 1) {
+                    if((string)$user->children()[$j]['id'] === $deleteLink){
+                        unset($user->children()[$j]);
+                    }
+                }
                 $xml->asXML($this->file);
             }
         }

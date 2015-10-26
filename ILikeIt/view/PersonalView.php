@@ -55,10 +55,11 @@ class PersonalView {
     public function renderUserLinks(){
         $response = "";
         $userLinks = $this->user->getUserLinks();
+        asort($userLinks);
 
         if($userLinks != null){
-            foreach($this->user->getUserLinks() as $link){
-            $response .= "<li><a href='//" . $link . "' target='_blank'>" . $link . "</a></li>";
+            foreach($userLinks as $link){
+                $response .= "<li><a href='//" . $link->getLink() . "' target='_blank'>" . $link->getLink() . "</a></li>";
             }
         }
         else {

@@ -10,7 +10,7 @@ class EditLinksView {
     }
 
     public function showPersonalInformation(){
-        return  "<p>Här kan du välja att ta bort en länk genom att klicka på den nedan.</p><br />
+        return "<p>Här kan du välja att ta bort en länk genom att klicka på den nedan.</p><br />
         <ul id='editLinksList'>" .
             $this->renderUserLinks() .
         "</ul>" .
@@ -19,11 +19,11 @@ class EditLinksView {
 
     public function renderUserLinks(){
         $response = "";
-        $count = 0;
-        foreach($this->user->getUserLinks() as $link){
-            $query = array('url' => $this->user->getUrl(), 'edit' => true, 'delete' => $count);
-            $response .= "<li><a href='?" . http_build_query($query) . "' id='" . $count . "'>" . $link . " [x]</a></li>";
-            $count++;
+        $userLinks = $this->user->getUserLinks();
+        asort($userLinks);
+        foreach($userLinks as $link){
+            $query = array('url' => $this->user->getUrl(), 'edit' => true, 'delete' => $link->getId());
+            $response .= "<li><a href='?" . http_build_query($query) . "'>" . $link->getLink() . " [x]</a></li>";
         }
         return $response;
     }
