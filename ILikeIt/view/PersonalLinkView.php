@@ -8,7 +8,7 @@ class PersonalLinkView {
 
     private $url;
     private $user;
-    private $linkLabelMessage = "Lägg till länk";
+    private $linkLabelMessage = "Lägg till länk:";
 
     public function __construct(\model\User $user){
         $this->user = $user;

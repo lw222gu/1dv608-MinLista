@@ -8,7 +8,7 @@ class PersonalListView {
     private static $editListItem = 'PersonalListView::editListItem';
 
     private $user;
-    private $listItemLabelMessage = "Lägg till en punkt till listan.";
+    private $listItemLabelMessage = "Lägg till något till listan:";
 
     public function __construct(\model\User $user){
         $this->user = $user;
@@ -37,7 +37,7 @@ class PersonalListView {
         }
 
         return "<p>Välkommen tillbaka" . $userName . "!</p>" . $this->renderAddLinkForm() .
-        "<br /><p>Din sparade lista:</p><ul id='listItemsList'>" .
+        "<ul id='listItemsList'>" .
         $this->renderUserListItems() . "</ul>" .
         $this->renderEditListItemsButton();
     }

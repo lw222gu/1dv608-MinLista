@@ -13,12 +13,13 @@ body {
 }
 
 header, main {
-    width:550px;
+    width:530px;
     float:left;
 }
 
 main {
     padding-bottom: 80px;
+    padding-right: 20px;
 }
 
 aside {
@@ -32,6 +33,7 @@ aside {
     margin-top: 20px;
     padding-top: 15px;
     padding-bottom: 80px;
+    overflow:auto;
 }
 
 header img {
@@ -47,6 +49,7 @@ footer {
     border-width: 1px;
     border-color: lightgray;
     padding-top: 50px;
+    padding-bottom: 50px;
 }
 
 footer p, footer a {
@@ -66,12 +69,16 @@ p {
 
 #nameLabel, #linkLabel, #listItemLabel {
     display:block;
-    font-size: 1em;
+    font-size: 0.9em;
     margin-top: 30px;
 }
 
 #nameLabel, #listItemLabel {
     color:forestgreen;
+}
+
+#nameLabel {
+    margin-bottom: 15px;
 }
 
 #linkLabel {
@@ -87,7 +94,7 @@ p {
     border-color: yellowgreen;
     color:yellowgreen;
     font-size: 1.1em;
-    text-align: center;
+    padding-left: 5px;
 }
 
 #nameInput {

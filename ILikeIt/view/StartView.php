@@ -18,12 +18,12 @@ class StartView {
 
     public function generateRegisterForm(){
         return '
-            <p>Välkommen till Min lista! Här skapar du en lista med de länkar du vill ha nära till hands.
+            <p>Välkommen till Min lista! Här kan du skapa just listor. En lista för lite vad som helst, och en lista med länkar du vill ha nära tillhands.
             Fyll i ditt namn nedan och klicka på den stora knappen så är du igång. Kom ihåg att spara adressen du länkas
             vidare till - det är nämligen så du kommer åt dina länkar senare. Ett tips är att spara den som startsida i webbläsaren, eller
             som ett bokmärke.</p>
             <form method="post" >
-                <label for="' . self::$name . '" id="nameLabel">Ditt namn (valfritt)</label>
+                <label for="' . self::$name . '" id="nameLabel">Ditt namn (valfritt):</label>
                 <input type="input" name ="' . self::$name . '" id="nameInput" value="" />
                 <input type="submit" name="' . self::$register . '" id="registerButton" value="Skapa din länklista!" />
             </form>
