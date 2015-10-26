@@ -22,7 +22,11 @@ class AddUserController {
     }
 
     /* Gets html output and returns it to MasterController. */
-    public function getOutput(){
-        return $this->startView->generateRegisterForm();
+    public function getMainOutput(){
+        return $this->startView->renderWelcomeMessage();
+    }
+
+    public function getAsideOutput(){
+        return $this->startView->renderRegisterForm();
     }
 }

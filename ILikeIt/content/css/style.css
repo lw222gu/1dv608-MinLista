@@ -31,7 +31,7 @@ aside {
     border-color: lightgray;
     padding-left: 25px;
     margin-top: 20px;
-    padding-top: 15px;
+    padding-top: 15px; 
     padding-bottom: 80px;
     overflow:auto;
 }
@@ -65,12 +65,12 @@ footer a:hover, footer a:focus {
 p {
     font-size: 0.9em;
     line-height: 1.35em;
+    margin-top: 0px;
 }
 
 #nameLabel, #linkLabel, #listItemLabel {
     display:block;
     font-size: 0.9em;
-    margin-top: 30px;
 }
 
 #nameLabel, #listItemLabel {
@@ -98,7 +98,7 @@ p {
 }
 
 #nameInput {
-    width:80%
+    width:90%
 }
 
 #listItemInput {

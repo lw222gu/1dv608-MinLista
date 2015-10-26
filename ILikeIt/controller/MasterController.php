@@ -23,7 +23,8 @@ class MasterController {
 
         else {
             $addUserController = new AddUserController();
-            $this->outputMain = $addUserController->getOutput();
+            $this->outputMain = $addUserController->getMainOutput();
+            $this->outputAside = $addUserController->getAsideOutput();
         }
 
         /* Runs layoutView to render output html */
