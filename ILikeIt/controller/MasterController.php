@@ -4,7 +4,8 @@ namespace controller;
 
 class MasterController {
 
-    private $output;
+    private $outputMain = "";
+    private $outputAside = "";
 
     public function __construct(\view\NavigationView $navigationView){
 
@@ -14,16 +15,19 @@ class MasterController {
         $user = $navigationView->getRegisteredUser();
         if($user != null){
             $registeredUserController = new RegisteredUserController($user, $navigationView->userWantsToEditLinks(), $navigationView->deleteLink());
-            $this->output = $registeredUserController->getOutput();
+            $this->outputAside = $registeredUserController->getOutput();
+
+            $listController = new ListController($user, $navigationView->wantsToEditListItems(), $navigationView->deleteListItem());
+            $this->outputMain = $listController->getOutput();
         }
 
         else {
             $addUserController = new AddUserController();
-            $this->output = $addUserController->getOutput();
+            $this->outputMain = $addUserController->getOutput();
         }
 
         /* Runs layoutView to render output html */
         $layoutView = new \view\LayoutView();
-        $layoutView->render($this->output);
+        $layoutView->render($this->outputMain, $this->outputAside);
     }
 }

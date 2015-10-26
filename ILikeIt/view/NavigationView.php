@@ -25,4 +25,19 @@ class NavigationView{
         }
         return null;
     }
+
+    //NYTT!!!
+    public function wantsToEditListItems(){
+        if(isset($_GET['editItem']) && $_GET['editItem'] == true){
+            return true;
+        }
+        return false;
+    }
+
+    public function deleteListItem(){
+        if(isset($_GET['deleteItem'])){
+            return $_GET['deleteItem'];
+        }
+        return null;
+    }
 }

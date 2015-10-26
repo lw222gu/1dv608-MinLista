@@ -32,12 +32,13 @@ class PersonalView {
     }
 
     public function showPersonalInformation(){
-        $userName = $this->user->getName();
+        /*$userName = $this->user->getName();
         if($userName != ""){
             $userName = " " . $userName;
-        }
+        }*/
 
-        return  "<p>Välkommen tillbaka" . $userName . "!</p>" . $this->renderAddLinkForm() .
+        return  //"<p>Välkommen tillbaka" . $userName . "!</p>" .
+                $this->renderAddLinkForm() .
                 "<br /><p>Dina sparade länkar:</p><ul id='linkList'>" .
                 $this->renderUserLinks() . "</ul>" .
                 $this->renderEditButton();

@@ -5,6 +5,7 @@ class User {
     private $url;
     private $name;
     private $links;
+    private $listItems;
 
     public function __construct($url = null){
         if($url != null){
@@ -30,5 +31,13 @@ class User {
 
     public function getUserLinks(){
         return $this->links;
+    }
+
+    public function setUserListItems($listItems){
+        $this->listItems = $listItems;
+    }
+
+    public function getUserListItems(){
+        return $this->listItems;
     }
 }

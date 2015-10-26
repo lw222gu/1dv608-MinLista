@@ -36,8 +36,18 @@ class UserDAL {
                     $j += 1;
                 }
 
+                //NYTT!!!!!!!
+                $k = 0;
+                $listItems = array();
+                while($xmlUser->listItem[$k] != null){
+                    $listItem = new ListItem((string)$xmlUser->listItem[$k]['desc'], (string)$xmlUser->listItem[$k]['id']);
+                    array_push($listItems, $listItem);
+                    $k += 1;
+                }
+
                 $customUser->setName((string)$xmlUser['name']);
                 $customUser->setUserLinks($links);
+                $customUser->setUserListItems($listItems);
                 return $customUser;
             }
         }
@@ -66,6 +76,36 @@ class UserDAL {
                 $user = $xml->children()[$i];
                 for($j = 0; $j < $user->children()->count(); $j += 1) {
                     if((string)$user->children()[$j]['id'] === $deleteLink){
+                        unset($user->children()[$j]);
+                    }
+                }
+                $xml->asXML($this->file);
+            }
+        }
+    }
+
+    public function saveListItemByUser(User $user, $listItem){
+        $xml = simplexml_load_file($this->file);
+
+        for($i = 0; $i < $xml->children()->count(); $i += 1){
+            if((string)$xml->children()[$i]['url'] === $user->getUrl()){
+                $xmlUser = $xml->children()[$i];
+                $xmlListItem = $xmlUser->addChild('listItem');
+                $xmlListItem->addAttribute("desc", $listItem);
+                $xmlListItem->addAttribute("id", uniqid());
+                $xml->asXML($this->file);
+            }
+        }
+    }
+
+    public function deleteListItem(User $user, $deleteListItem){
+        $xml = simplexml_load_file($this->file);
+
+        for($i = 0; $i < $xml->children()->count(); $i += 1) {
+            if ((string)$xml->children()[$i]['url'] === $user->getUrl()) {
+                $user = $xml->children()[$i];
+                for($j = 0; $j < $user->children()->count(); $j += 1) {
+                    if((string)$user->children()[$j]['id'] === $deleteListItem){
                         unset($user->children()[$j]);
                     }
                 }

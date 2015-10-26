@@ -2,7 +2,7 @@
 namespace view;
 class LayoutView {
 
-    public function render($output){
+    public function render($outputMain, $outputAside){
         echo'<!DOCTYPE html>
             <html>
                 <head>
@@ -14,8 +14,9 @@ class LayoutView {
                     <div id="content">
                         ' . $this->renderHeader() . '
                         <main>
-                            ' . $output . '
+                            ' . $outputMain . '
                         </main>
+                        <aside>' . $outputAside . '</aside>
                         ' . $this->renderFooter() . '
                     </div>
                  </body>
@@ -36,3 +37,4 @@ class LayoutView {
                 </footer>';
     }
 }
+
