@@ -10,12 +10,12 @@ class MasterController {
     public function __construct(\view\NavigationView $navigationView){
 
         /* Gets information from navigationView to determine whether to run
-         * RegisteredUserController or AddUserController, depending on if user exists or not.
+         * LinkController or AddUserController, depending on if user exists or not.
          */
         $user = $navigationView->getRegisteredUser();
         if($user != null){
-            $registeredUserController = new RegisteredUserController($user, $navigationView->userWantsToEditLinks(), $navigationView->deleteLink());
-            $this->outputAside = $registeredUserController->getOutput();
+            $linkController = new LinkController($user, $navigationView->userWantsToEditLinks(), $navigationView->deleteLink());
+            $this->outputAside = $linkController->getOutput();
 
             $listController = new ListController($user, $navigationView->wantsToEditListItems(), $navigationView->deleteListItem());
             $this->outputMain = $listController->getOutput();

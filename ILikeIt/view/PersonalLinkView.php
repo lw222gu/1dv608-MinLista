@@ -1,10 +1,10 @@
 <?php
 namespace view;
-class PersonalView {
+class PersonalLinkView {
 
-    private static $link = 'PersonalView::Link';
-    private static $addLink = 'PersonalView::AddLink';
-    private static $editLink = 'PersonalView::EditLink';
+    private static $link = 'PersonalLinkView::Link';
+    private static $addLink = 'PersonalLinkView::AddLink';
+    private static $editLink = 'PersonalLinkView::EditLink';
 
     private $url;
     private $user;
@@ -32,11 +32,6 @@ class PersonalView {
     }
 
     public function showPersonalInformation(){
-        /*$userName = $this->user->getName();
-        if($userName != ""){
-            $userName = " " . $userName;
-        }*/
-
         return  $this->renderAddLinkForm() .
                 "<ul id='linkList'>" .
                 $this->renderUserLinks() . "</ul>" .

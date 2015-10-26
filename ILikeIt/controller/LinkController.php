@@ -1,11 +1,11 @@
 <?php
 namespace controller;
 
-class RegisteredUserController {
+class LinkController {
 
     private $userDAL;
     private $user;
-    private $personalView;
+    private $personalLinkView;
     private $link;
     private $output;
 
@@ -28,15 +28,15 @@ class RegisteredUserController {
         }
 
         else{
-            $this->personalView = new \view\PersonalView($this->user);
+            $this->personalLinkView = new \view\PersonalLinkView($this->user);
 
             try{
-                if($this->personalView->didUserPressAddLinkButton()){
-                    $this->link = $this->personalView->getLink();
+                if($this->personalLinkView->didUserPressAddLinkButton()){
+                    $this->link = $this->personalLinkView->getLink();
 
                     if($this->link != null){
                         $this->saveLink();
-                        $this->personalView->redirect();
+                        $this->personalLinkView->redirect();
                     }
                     else {
                         throw new \Exception();
@@ -44,9 +44,9 @@ class RegisteredUserController {
                 }
             }
             catch(\Exception $e){
-                $this->personalView->setErrorMessage();
+                $this->personalLinkView->setErrorMessage();
             }
-            $this->output = $this->personalView->showPersonalInformation();
+            $this->output = $this->personalLinkView->showPersonalInformation();
         }
     }
 

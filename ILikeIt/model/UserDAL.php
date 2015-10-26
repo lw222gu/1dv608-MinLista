@@ -36,7 +36,6 @@ class UserDAL {
                     $j += 1;
                 }
 
-                //NYTT!!!!!!!
                 $k = 0;
                 $listItems = array();
                 while($xmlUser->listItem[$k] != null){
