@@ -44,9 +44,9 @@ class PersonalListView {
 
     public function renderAddLinkForm(){
         return '<form method="post" >
-                    <label for="' . self::$listItem . '" id="linkLabel">' . $this->listItemLabelMessage . '</label>
-                    <input type="input" name ="' . self::$listItem . '" id="linkInput" value="" />
-                    <input type="submit" name="' . self::$addListItem . '" id="addLinkButton" value="Spara!" />
+                    <label for="' . self::$listItem . '" id="listItemLabel">' . $this->listItemLabelMessage . '</label>
+                    <input type="input" name ="' . self::$listItem . '" id="listItemInput" value="" />
+                    <input type="submit" name="' . self::$addListItem . '" id="addListItemButton" value="Spara" />
                 </form>
         ';
     }

@@ -37,9 +37,8 @@ class PersonalView {
             $userName = " " . $userName;
         }*/
 
-        return  //"<p>Välkommen tillbaka" . $userName . "!</p>" .
-                $this->renderAddLinkForm() .
-                "<br /><p>Dina sparade länkar:</p><ul id='linkList'>" .
+        return  $this->renderAddLinkForm() .
+                "<ul id='linkList'>" .
                 $this->renderUserLinks() . "</ul>" .
                 $this->renderEditButton();
     }
@@ -48,7 +47,7 @@ class PersonalView {
         return '<form method="post" >
                     <label for="' . self::$link . '" id="linkLabel">' . $this->linkLabelMessage . '</label>
                     <input type="input" name ="' . self::$link . '" id="linkInput" value="" />
-                    <input type="submit" name="' . self::$addLink . '" id="addLinkButton" value="Spara länken" />
+                    <input type="submit" name="' . self::$addLink . '" id="addLinkButton" value="Spara" />
                 </form>
         ';
     }
