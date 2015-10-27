@@ -36,7 +36,7 @@ class PersonalListView {
             $userName = " " . $userName;
         }
 
-        return "<p>Välkommen tillbaka" . $userName . "!</p>" . $this->renderAddLinkForm() .
+        return "<p>Hej" . $userName . "! Här hittar du din lista och din länksamling.</p>" . $this->renderAddLinkForm() .
         "<ul id='listItemsList'>" .
         $this->renderUserListItems() . "</ul>" .
         $this->renderEditListItemsButton();
@@ -62,7 +62,7 @@ class PersonalListView {
             }
         }
         else {
-            $response = "<p>Du har inte sparat något i listan ännu. Lägg till punkter ovan.</p>";
+            $response = "<p>Du har inte sparat något i listan ännu. Lägg till poster ovan.</p>";
         }
         return $response;
     }

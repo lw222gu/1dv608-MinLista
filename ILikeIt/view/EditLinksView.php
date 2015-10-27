@@ -22,14 +22,14 @@ class EditLinksView {
         $userLinks = $this->user->getUserLinks();
         asort($userLinks);
         foreach($userLinks as $link){
-            $query = array('url' => $this->user->getUrl(), 'edit' => true, 'delete' => $link->getId());
+            $query = array('url' => $this->user->getUrl(), 'editLink' => true, 'deleteLink' => $link->getId());
             $response .= "<li><a href='?" . http_build_query($query) . "'>" . $link->getLink() . " [x]</a></li>";
         }
         return $response;
     }
 
     public function renderBackButton(){
-        $query = array('url' => $this->user->getUrl(), 'edit' => false);
+        $query = array('url' => $this->user->getUrl(), 'editLink' => false);
         return '<a href="?' . http_build_query($query) . '" id="backLink">Tillbaka</a>';
     }
 }

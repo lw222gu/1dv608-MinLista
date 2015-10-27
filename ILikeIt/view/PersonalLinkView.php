@@ -64,13 +64,13 @@ class PersonalLinkView {
     }
 
     public function renderEditButton(){
-        $query = array('url' => $this->url, 'edit' => true);
+        $query = array('url' => $this->url, 'editLink' => true);
         return '<a href="?' . http_build_query($query) . '" name="' . self::$editLink . '" id="editLink">Redigera länkar</a>';
     }
 
     public function redirect(){
         $actualLink = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'];
-        $query = array('url' => $this->url, 'edit' => false);
+        $query = array('url' => $this->url, 'editLink' => false);
         header("Location: $actualLink" . "?" . http_build_query($query));
     }
 }

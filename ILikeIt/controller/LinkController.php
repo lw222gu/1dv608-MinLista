@@ -19,7 +19,7 @@ class LinkController {
          */
         if($wantsToEditLinks){
             if($deleteLink != null){
-                /* deleteLink contains an index of which link to delete */
+                /* deleteLink contains an id of which link to delete */
                 $this->userDAL->deleteLink($this->user, $deleteLink);
                 $this->user = $this->userDAL->getUserByUrl($this->user->getUrl());
             }
@@ -54,6 +54,7 @@ class LinkController {
         $this->userDAL->saveLinkByUser($this->user, $this->link);
     }
 
+    /* Returns HTML-output to MasterController. */
     public function getOutput(){
         return $this->output;
     }

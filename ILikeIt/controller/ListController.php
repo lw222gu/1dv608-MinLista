@@ -12,12 +12,12 @@ class ListController {
         $this->user = $user;
 
         /*
-         * wantsToEditLinks status from masterController decides
+         * wantsToEditListItems status from masterController decides
          * whether to display editLinksView or personalView
          */
         if($wantsToEditListItems){
             if($deleteListItem != null){
-                /* deleteListItem contains an index of which listItem to delete */
+                /* deleteListItem contains an id of which listItem to delete */
                 $this->userDAL->deleteListItem($this->user, $deleteListItem);
                 $this->user = $this->userDAL->getUserByUrl($this->user->getUrl());
             }
@@ -52,6 +52,7 @@ class ListController {
         $this->userDAL->saveListItemByUser($this->user, $this->listItem);
     }
 
+    /* Returns HTML-output to MasterController. */
     public function getOutput(){
         return $this->output;
     }
