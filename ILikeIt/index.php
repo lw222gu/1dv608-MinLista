@@ -17,10 +17,6 @@ require_once('controller/AddUserController.php');
 require_once('controller/LinkController.php');
 require_once('controller/ListController.php');
 
-/* Make sure errors are shown */
-error_reporting(E_ALL);
-ini_set('display_errors', 'On');
-
 /* Initialize navigationView and start masterController */
 $navigationView = new view\NavigationView();
 $masterController = new controller\MasterController($navigationView);
