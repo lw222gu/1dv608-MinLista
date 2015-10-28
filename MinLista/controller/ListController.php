@@ -6,6 +6,7 @@ class ListController {
     private $output;
     private $user;
     private $listItem;
+    private $userDAL;
 
     public function __construct(\model\User $user, $wantsToEditListItems, $deleteListItem){
         $this->userDAL = new \model\UserDAL();

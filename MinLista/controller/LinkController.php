@@ -5,7 +5,6 @@ class LinkController {
 
     private $userDAL;
     private $user;
-    private $personalLinkView;
     private $link;
     private $output;
 
@@ -28,15 +27,15 @@ class LinkController {
         }
 
         else{
-            $this->personalLinkView = new \view\PersonalLinkView($this->user);
+            $personalLinkView = new \view\PersonalLinkView($this->user);
 
             try{
-                if($this->personalLinkView->didUserPressAddLinkButton()){
-                    $this->link = $this->personalLinkView->getLink();
+                if($personalLinkView->didUserPressAddLinkButton()){
+                    $this->link = $personalLinkView->getLink();
 
                     if($this->link != null){
                         $this->saveLink();
-                        $this->personalLinkView->redirect();
+                        $personalLinkView->redirect();
                     }
                     else {
                         throw new \Exception();
@@ -44,9 +43,9 @@ class LinkController {
                 }
             }
             catch(\Exception $e){
-                $this->personalLinkView->setErrorMessage();
+                $personalLinkView->setErrorMessage();
             }
-            $this->output = $this->personalLinkView->showPersonalInformation();
+            $this->output = $personalLinkView->showPersonalInformation();
         }
     }
 
