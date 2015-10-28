@@ -37,16 +37,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".htaccess" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/data/.htaccess">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="119">
-              <caret line="1" column="13" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="AddUserController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/controller/AddUserController.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -107,11 +97,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EditLinksView.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="EditLinksView.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/view/EditLinksView.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.72069824" vertical-offset="0" max-vertical-offset="802">
+            <state vertical-scroll-proportion="-22.23077" vertical-offset="0" max-vertical-offset="680">
               <caret line="34" column="1" selection-start-line="34" selection-start-column="1" selection-end-line="34" selection-end-column="1" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="users.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/data/users.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.041062802" vertical-offset="0" max-vertical-offset="828">
+              <caret line="2" column="8" selection-start-line="2" selection-start-column="8" selection-end-line="2" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -154,7 +154,6 @@
         <option value="$PROJECT_DIR$/view/EditListItemsView.php" />
         <option value="$PROJECT_DIR$/view/PersonalView.php" />
         <option value="$PROJECT_DIR$/view/PersonalLinkLinkView.php" />
-        <option value="$PROJECT_DIR$/data/users.xml" />
         <option value="$PROJECT_DIR$/content/css/style.css" />
         <option value="$PROJECT_DIR$/view/EditLinksView.php" />
         <option value="$PROJECT_DIR$/view/StartView.php" />
@@ -167,6 +166,7 @@
         <option value="$PROJECT_DIR$/controller/LinkController.php" />
         <option value="$PROJECT_DIR$/controller/AddUserController.php" />
         <option value="$PROJECT_DIR$/model/UserDAL.php" />
+        <option value="$PROJECT_DIR$/data/users.xml" />
       </list>
     </option>
   </component>
@@ -175,8 +175,8 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" interpreter_name="PHP" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="-1562" />
-    <option name="y" value="68" />
+    <option name="x" value="-1597" />
+    <option name="y" value="41" />
     <option name="width" value="1364" />
     <option name="height" value="965" />
   </component>
@@ -401,7 +401,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1562" y="68" width="1364" height="965" extended-state="0" />
+    <frame x="-1597" y="41" width="1364" height="965" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -715,14 +715,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data/users.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="136">
-          <caret line="2" column="8" selection-start-line="2" selection-start-column="8" selection-end-line="2" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/content/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3774">
@@ -867,8 +859,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/view/EditLinksView.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.72069824" vertical-offset="0" max-vertical-offset="802">
+        <state vertical-scroll-proportion="-22.23077" vertical-offset="0" max-vertical-offset="680">
           <caret line="34" column="1" selection-start-line="34" selection-start-column="1" selection-end-line="34" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/users.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.041062802" vertical-offset="0" max-vertical-offset="828">
+          <caret line="2" column="8" selection-start-line="2" selection-start-column="8" selection-end-line="2" selection-end-column="8" />
           <folding />
         </state>
       </provider>
