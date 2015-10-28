@@ -4,11 +4,11 @@ namespace view;
 class NavigationView{
 
     public function getRegisteredUser(){
-       if(isset($_GET['url'])){
-           $userDAL = new \model\UserDAL();
-           $user = $userDAL->getUserByUrl($_GET['url']);
-           return $user; /* If url doesn´t match a valid user, $user will be set to null in UserDAL. */
-       }
+        if(isset($_GET['url'])){
+            $userDAL = new \model\UserDAL();
+            $user = $userDAL->getUserByUrl($_GET['url']);
+            return $user; /* If url doesn´t match a valid user, $user will be set to null in UserDAL. */
+        }
         return null;
     }
 
@@ -21,7 +21,7 @@ class NavigationView{
 
     public function deleteLink(){
         if(isset($_GET['deleteLink'])){
-            return $_GET['deleteLink'];
+            return $_GET['deleteLink']; /* Returns the id of link to delete. */
         }
         return null;
     }
@@ -35,7 +35,7 @@ class NavigationView{
 
     public function deleteListItem(){
         if(isset($_GET['deleteItem'])){
-            return $_GET['deleteItem'];
+            return $_GET['deleteItem']; /* Returns the id of the list item to delete. */
         }
         return null;
     }

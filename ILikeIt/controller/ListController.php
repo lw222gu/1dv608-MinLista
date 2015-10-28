@@ -13,7 +13,7 @@ class ListController {
 
         /*
          * wantsToEditListItems status from masterController decides
-         * whether to display editLinksView or personalView
+         * whether to display editListItemsView or personalListView
          */
         if($wantsToEditListItems){
             if($deleteListItem != null){

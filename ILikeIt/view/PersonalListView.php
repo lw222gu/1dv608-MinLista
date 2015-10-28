@@ -36,7 +36,8 @@ class PersonalListView {
             $userName = " " . $userName;
         }
 
-        return "<p>Hej" . $userName . "! Här hittar du din lista och din länksamling.</p>" . $this->renderAddLinkForm() .
+        return "<p>Hej" . $userName . "! Här hittar du din lista och din länksamling.</p>" .
+        $this->renderAddLinkForm() .
         "<ul id='listItemsList'>" .
         $this->renderUserListItems() . "</ul>" .
         $this->renderEditListItemsButton();
@@ -62,19 +63,24 @@ class PersonalListView {
             }
         }
         else {
-            $response = "<p>Du har inte sparat något i listan ännu. Lägg till poster ovan.</p>";
+            $response = '<p>Du har inte sparat något i listan ännu. Lägg till poster ovan.</p>';
         }
         return $response;
     }
 
+    /* Edit button should only appear if user has saved list items. */
     public function renderEditListItemsButton(){
-        $query = array('url' => $this->user->getUrl(), 'editItem' => true);
-        return '<a href="?' . http_build_query($query) . '" name="' . self::$editListItem . '" id="editListItem">Redigera listan</a>';
+        if($this->user->getUserListItems() != null){
+            $query = array('url' => $this->user->getUrl(), 'editItem' => true);
+            return '<a href="?' . http_build_query($query) . '" name="' . self::$editListItem . '" id="editListItem">Redigera listan</a>';
+        }
+        return "";
     }
 
+    /* Redirects and sets query string with unique url. */
     public function redirect(){
         $actualLink = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'];
-        $query = array('url' => $this->user->getUrl(), 'editItem' => false);
+        $query = array('url' => $this->user->getUrl());
         header("Location: $actualLink" . "?" . http_build_query($query));
     }
 }

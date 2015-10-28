@@ -58,19 +58,24 @@ class PersonalLinkView {
             }
         }
         else {
-            $response = "<p>Du har inte sparat några länkar ännu. Lägg till länkar ovan.</p>";
+            $response = '<p>Du har inte sparat några länkar ännu. Lägg till länkar ovan.</p>';
         }
         return $response;
     }
 
+    /* Edit button should only appear if user has saved links. */
     public function renderEditButton(){
-        $query = array('url' => $this->url, 'editLink' => true);
-        return '<a href="?' . http_build_query($query) . '" name="' . self::$editLink . '" id="editLink">Redigera länkar</a>';
+
+        if($this->user->getUserLinks() != null){
+            $query = array('url' => $this->url, 'editLink' => true);
+            return '<a href="?' . http_build_query($query) . '" name="' . self::$editLink . '" id="editLink">Redigera länkar</a>';
+        }
+        return "";
     }
 
     public function redirect(){
         $actualLink = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'];
-        $query = array('url' => $this->url, 'editLink' => false);
+        $query = array('url' => $this->url);
         header("Location: $actualLink" . "?" . http_build_query($query));
     }
 }

@@ -11,7 +11,7 @@ class MasterController {
 
         /*
          * Gets information from navigationView to determine whether to run
-         * LinkController or AddUserController, depending on if user exists or not.
+         * LinkController AND ListController OR AddUserController, depending on if user exists or not.
          */
         $user = $navigationView->getRegisteredUser();
 

@@ -15,7 +15,7 @@ class LinkController {
 
         /*
          * wantsToEditLinks status from masterController decides
-         * whether to display editLinksView or personalView
+         * whether to display editLinksView or personalLinkView
          */
         if($wantsToEditLinks){
             if($deleteLink != null){

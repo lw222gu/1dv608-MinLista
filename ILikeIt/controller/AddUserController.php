@@ -21,7 +21,9 @@ class AddUserController {
         }
     }
 
-    /* Gets html output and returns it to MasterController. */
+    /*
+     * Functions below gets html output and returns it to MasterController.
+     */
     public function getMainOutput(){
         return $this->startView->renderWelcomeMessage();
     }
